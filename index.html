@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIGA – Fatec</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #eef0f5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    /* ── LOGIN CARD ── */
+    .login-card {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 1.8rem 2.4rem;
+      width: 380px;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+    .login-card:hover { box-shadow: 0 2px 14px rgba(0,0,0,0.13); }
+
+    .login-btn {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .win-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .login-text-main {
+      font-size: 16px;
+      font-weight: 600;
+      color: #111;
+    }
+    .login-text-sub {
+      font-size: 12px;
+      color: #555;
+      margin-top: 3px;
+    }
+
+    .card-logos {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 1.6rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .sp-text-logo {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .sp-square {
+      width: 22px;
+      height: 22px;
+      background: #c8102e;
+    }
+    .sp-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+    .cps-text-logo {
+      font-family: Georgia, serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #c8102e;
+      letter-spacing: -1px;
+    }
+
+    .login-info {
+      display: flex;
+      gap: 2rem;
+      max-width: 580px;
+    }
+    .login-info p {
+      font-size: 12px;
+      color: #333;
+      line-height: 1.75;
+    }
+    .login-info strong { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <article class="login-card" onclick="window.location.href='dashboard.html'" role="button" tabindex="0" aria-label="Ingressar no sistema via Microsoft">
+      <section class="login-btn">
+        <svg class="win-icon" viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 12.5 42 6.8V42H0z" fill="#f25022"/>
+          <path d="M46 6.2 88 0v42H46z" fill="#7fba00"/>
+          <path d="M0 46h42v35.2L0 75.5z" fill="#00a4ef"/>
+          <path d="M46 46h42v42L46 81.8z" fill="#ffb900"/>
+        </svg>
+        <div>
+          <div class="login-text-main">Ingressar no sistema</div>
+          <div class="login-text-sub">(utilize sua credencial de aluno (@fatec))</div>
+        </div>
+      </section>
+      <div class="card-logos">
+        <div class="sp-text-logo">
+          <div class="sp-square"></div>
+          <div class="sp-label">SÃO PAULO<br>GOVERNO DO ESTADO</div>
+        </div>
+        <div class="cps-text-logo">cps</div>
+      </div>
+    </article>
+
+    <div class="login-info">
+      <p>Este sistema é destinado aos alunos FATEC. Para ingressar utilize seu email <strong>@fatec</strong> na interface de entrada (Microsoft) que será aberta, ao clicar na caixa apresentada acima. Em caso de dificuldades, recomendamos que consulte a Secretaria Acadêmica de sua Unidade de Ensino.</p>
+      <p><strong>ATENÇÃO!</strong> considere abrir este sistema utilizando uma <strong>janela anônima no navegador</strong>, caso o esteja utilizando em um computador público, para que sua sessão Microsoft não fique armazenado para o próximo usuário.</p>
+    </div>
+  </div>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+</body>
+</html>
